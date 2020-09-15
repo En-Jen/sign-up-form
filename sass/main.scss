@@ -11,6 +11,8 @@ $font-family: 'Poppins', sans-serif;
 // FONT SIZE
 $default-font-size: 1.6rem;
 
+
+
 *,
 *::before,
 *::after {
@@ -22,4 +24,113 @@ $default-font-size: 1.6rem;
 html {
     box-sizing: border-box;
     font-size: 62.5%; //1rem = 10px
+}
+
+body {
+    font-size: $default-font-size;
+    font-family: $font-family;
+    color: #fff;
+}
+
+.intro {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/bg-intro-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $color-pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        padding: 2.4rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__left {
+        margin-bottom: 5rem;
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        line-height: 3.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__description {
+        line-height: 2.6rem;
+    }
+
+    &__right {
+
+    }
+
+    // Turn into mixin??
+    &__card {        
+        border-radius: 8px;
+        box-shadow: 0 8px 0 rgba(0, 0, 0, .15);
+    }
+
+    &__card--top {
+        background-color: $color-blue;
+        padding: 2rem 5.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__offer {
+        font-size: 1.5rem;
+        line-height: 2.6rem;
+
+        &--bold {
+            font-weight: 700;
+        }
+    }
+
+    &__card--bottom {
+        background-color: #fff;
+        padding: 2.4rem;
+    }
+
+    &__form {
+
+    }
+
+    &__field-group {
+
+    }
+
+    &__form-label {
+        display: none;
+    }
+
+    &__form-input {
+
+    }
+
+    &__error-icon {
+
+    }
+
+    &__error-text {
+        color: $color-pink;
+        font-size: 1.1rem;
+        font-style: italic;
+    }
+
+    &__btn {
+
+    }
+
+    &__form-footer {
+        color: $color-blue-light;
+        font-size: 1.1rem;
+        font-weight: 500;
+
+        &--bold {
+            
+        }
+    }
 }
