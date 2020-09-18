@@ -12,6 +12,16 @@ $font-family: 'Poppins', sans-serif;
 // FONT SIZE
 $default-font-size: 1.6rem;
 
+// Override Sass min()
+@function min($numbers...) {
+    @return m#{i}n(#{$numbers});
+}
+
+// Override Sass max()
+@function max($numbers...) {
+    @return m#{a}x(#{$numbers});
+}
+
 .intro__error-icon,
 .intro__error-text {
     display: none;
@@ -48,21 +58,41 @@ body {
     justify-content: center;
     align-items: center;
 
+    @media only screen and (min-width: 768px) {
+        background-image: url(../images/bg-intro-desktop.png);
+    }
+
     &__container {
-        padding: 8rem 2.4rem;
+        width: min(100%, 600px);
+        padding: 9rem 2.4rem;
         text-align: center;
         display: flex;
         flex-direction: column;
+
+        @media only screen and (min-width: 1200px) {
+            flex-direction: row;
+            width: min(80%, 1200px);
+        }
     }
 
     &__left {
-        margin-bottom: 5rem;
+        margin-bottom: 6.4rem;
+        flex: 1;
+        
+        @media only screen and (min-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            margin-right: min(3rem, 3vw);
+            margin-bottom: 0;
+        }
     }
 
     &__heading {
-        font-size: 2.8rem;
-        line-height: 3.6rem;
-        margin-bottom: 1.5rem;
+        font-size:  clamp(2.8rem, 3.5vw, 5rem);
+        line-height: calc(3rem + 1.5vw);
+        margin-bottom: 2.2rem;
     }
 
     &__description {
@@ -70,7 +100,7 @@ body {
     }
 
     &__right {
-
+        flex: 1.01;
     }
 
     // Turn into mixin??
@@ -83,7 +113,7 @@ body {
     &__card--top {
         background-color: $color-blue;
         padding: 2rem 5.5rem;
-        margin-bottom: 2.5rem;
+        margin-bottom: 2.4rem;
     }
 
     &__offer {
@@ -97,7 +127,7 @@ body {
 
     &__card--bottom {
         background-color: $color-white;
-        padding: 2.4rem;
+        padding: 7.4%;
     }
 
     &__form {
@@ -106,7 +136,11 @@ body {
 
     &__field-group {
         position: relative;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.6rem;
+
+        @media only screen and (min-width: 768px) {
+            margin-bottom: 2rem;
+        }
     }
 
     &__form-label {
@@ -119,6 +153,10 @@ body {
         color: $color-blue-dark;
         border: 1px solid hsl(0, 0%, 87%);
         padding-left: 2rem;
+
+        @media only screen and (min-width: 1200px) {
+            padding-left: 3.3rem;
+        }
 
         &:focus {
             border: 1px solid $color-blue;
