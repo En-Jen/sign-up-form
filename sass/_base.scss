@@ -1,0 +1,38 @@
+// COLOR VARIABLES
+$color-pink: hsl(0, 100%, 74%);
+$color-green: hsl(154, 59%, 51%);
+$color-blue: hsl(248, 32%, 49%);
+$color-blue-dark: hsl(249, 10%, 26%);
+$color-blue-light: hsl(246, 25%, 77%);
+$color-white: hsl(0, 0%, 100%);
+
+// FONT VARIABLES
+$font-family: 'Poppins', sans-serif;
+
+// FONT SIZE
+$default-font-size: 1.6rem;
+
+// Override Sass min()
+@function min($numbers...) {
+    @return m#{i}n(#{$numbers});
+}
+
+// GLOBAL
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //1rem = 10px
+}
+
+// PLACEHOLDER
+%card-styles {
+    border-radius: 8px;
+    box-shadow: 0 8px 0 rgba(0, 0, 0, .15);
+}
